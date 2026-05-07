@@ -1,0 +1,30 @@
+node_modules/
+.next/
+out/
+.env
+.env.local
+
+# Root-level stale files (not needed for deploy)
+/index.html
+/download-videos.sh
+/123.png
+/sihloette.png
+/siloette of tower.png
+/ChatGPT*.png
+/Generated*.png
+/o-mark-app-icon-cyan.png
+/o-mark-on-dark.png
+/wordmark-on-dark-hires.png
+
+# Root-level raw video downloads
+/13989941_3840_2160_30fps.mp4
+/16998369-uhd_3840_2160_30fps.mp4
+/17526711-uhd_4096_2160_30fps.mp4
+/2941128-uhd_4096_2160_24fps.mp4
+/5567022-hd_1920_1080_30fps.mp4
+
+# Old tower attempts in public (only tower-render.png is used)
+/public/tower-silhouette.png
+/public/tower-silhouette-clean.png
+/public/tower-mast.png
+/public/tower-silhouette-final.png
