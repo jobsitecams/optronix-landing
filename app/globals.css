@@ -1,336 +1,336 @@
 @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400&family=Roboto:wght@300;400;500;700&display=swap');
 
 *, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
-  --panel: #3f4754;
-  --panel-deep: #363d4a;
-  --cyan: #4dd8e6;
-  --cyan-dim: rgba(77, 216, 230, 0.12);
-  --text: #c8cad0;
-  --text-sub: #7d8490;
+    --panel: #3f4754;
+    --panel-deep: #363d4a;
+    --cyan: #4dd8e6;
+    --cyan-dim: rgba(77, 216, 230, 0.12);
+    --text: #c8cad0;
+    --text-sub: #7d8490;
 }
 
 html, body {
-  height: 100%;
-  overflow: hidden;
-  font-family: 'Inter', -apple-system, sans-serif;
-  background: #1a1e26;
-  color: var(--text);
-  -webkit-font-smoothing: antialiased;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: #1a1e26;
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
 }
 
 
-/* ═══════════════════════════════════════
-   LAYOUT — three horizontal zones
-   ═══════════════════════════════════════ */
+/* =======================================================
+   LAYOUT - three horizontal zones
+   ======================================================= */
 .page {
-  position: relative;
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
+    position: relative;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
 
 
-/* ═══════════════════════════════════════
-   TOP BANNER — solid, holds the O mark
-   ═══════════════════════════════════════ */
+/* =======================================================
+   TOP BANNER - solid, holds the O mark
+   ======================================================= */
 .top-banner {
-  position: relative;
-  z-index: 3;
-  background: var(--panel);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2.5rem 2rem 2rem;
-  flex-shrink: 0;
-  /* subtle bottom edge */
+    position: relative;
+    z-index: 3;
+    background: var(--panel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 2rem 2rem;
+    flex-shrink: 0;
+    /* subtle bottom edge */
   box-shadow: 0 4px 30px rgba(0,0,0,0.3);
 }
 
 .logo-mark {
-  width: 130px;
-  height: 130px;
-  filter: drop-shadow(0 0 40px rgba(77,216,230,0.06));
-  opacity: 0;
-  animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    width: 130px;
+    height: 130px;
+    filter: drop-shadow(0 0 40px rgba(77,216,230,0.06));
+    opacity: 0;
+    animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
 
 @keyframes revealDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 .logo-wordmark {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 3.5px;
-  text-transform: lowercase;
-  color: var(--text-sub);
-  margin-top: 0.45rem;
-  text-align: center;
-  text-decoration: none;
-  transition: color 0.3s ease;
-  opacity: 0;
-  animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.16rem;
+    font-weight: 500;
+    letter-spacing: 3.5px;
+    text-transform: lowercase;
+    color: var(--text-sub);
+    margin-top: 0.45rem;
+    text-align: center;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    opacity: 0;
+    animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
 .logo-wordmark:hover {
-  color: var(--cyan);
+    color: var(--cyan);
 }
 
 
-/* ═══════════════════════════════════════
-   MIDDLE — video shows through here
-   ═══════════════════════════════════════ */
+/* =======================================================
+   MIDDLE - video shows through here
+   ======================================================= */
 .middle {
-  position: relative;
-  z-index: 2;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 /* Video / image layers sit behind the middle content */
 .bg-wrap {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
 
 .bg-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  z-index: 0;
-  transition: opacity 2s ease;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 2s ease;
 }
 /* outgoing slide stays visible underneath */
 .bg-slide.prev {
-  opacity: 1;
-  z-index: 1;
+    opacity: 1;
+    z-index: 1;
 }
 /* incoming slide fades in on top */
 .bg-slide.active {
-  opacity: 1;
-  z-index: 2;
+    opacity: 1;
+    z-index: 2;
 }
 
 .bg-slide video,
 .bg-slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .bg-slide.active video,
 .bg-slide.active img {
-  animation: breathe 10s ease-out forwards;
+    animation: breathe 10s ease-out forwards;
 }
 @keyframes breathe {
-  from { transform: scale(1.01); }
-  to   { transform: scale(1.06); }
+    from { transform: scale(1.01); }
+    to   { transform: scale(1.06); }
 }
 
-/* Overlay — softens video, keeps text legible */
+/* Overlay - softens video, keeps text legible */
 .bg-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse 90% 80% at 50% 50%,
-      rgba(26,30,38,0.6) 0%,
-      rgba(18,21,28,0.82) 100%);
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    pointer-events: none;
+    background:
+          radial-gradient(ellipse 90% 80% at 50% 50%,
+                                rgba(26,30,38,0.6) 0%,
+                                rgba(18,21,28,0.82) 100%);
 }
 /* top/bottom soft fade into the solid banners */
 .bg-overlay::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to bottom,
-      var(--panel) 0%,
-      transparent 18%,
-      transparent 82%,
-      var(--panel) 100%);
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+          linear-gradient(to bottom,
+                                var(--panel) 0%,
+                                transparent 18%,
+                                transparent 82%,
+                                var(--panel) 100%);
 }
 /* subtle grain */
 .bg-overlay::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-size: 128px;
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 128px;
 }
 
-/* The tagline — the only thing in the middle */
+/* The tagline - the only thing in the middle */
 .hero-title {
-  position: relative;
-  z-index: 2;
-  font-family: 'Rajdhani', sans-serif;
-  font-size: clamp(2.8rem, 8vw, 5.5rem);
-  font-weight: 300;
-  line-height: 0.92;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  text-align: center;
-  color: var(--text);
-  text-shadow: 0 2px 40px rgba(0,0,0,0.5);
-  opacity: 0;
-  animation: revealUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+    position: relative;
+    z-index: 2;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 300;
+    line-height: 0.92;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--text);
+    text-shadow: 0 2px 40px rgba(0,0,0,0.5);
+    opacity: 0;
+    animation: revealUp 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
 .hero-title .accent {
-  font-weight: 700;
-  color: var(--cyan);
-  text-shadow: 0 0 40px rgba(77, 216, 230, 0.15);
+    font-weight: 700;
+    color: var(--cyan);
+    text-shadow: 0 0 40px rgba(77, 216, 230, 0.15);
 }
 
 @keyframes revealUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
 
-/* ═══════════════════════════════════════
-   TOWER SILHOUETTE — positioned on .page,
+/* =======================================================
+   TOWER SILHOUETTE - positioned on .page,
    base on footer, extends up into video
-   ═══════════════════════════════════════ */
+   ======================================================= */
 .tower-silhouette {
-  position: absolute;
-  z-index: 4;
-  right: calc(50% - 20rem + 60px);
-  bottom: -5px;
-  height: 35%;
-  width: auto;
-  pointer-events: none;
-  user-select: none;
-  opacity: 0;
-  animation: fadeInTower 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
+    position: absolute;
+    z-index: 4;
+    right: calc(50% - 20rem + 60px);
+    bottom: -5px;
+    height: 35%;
+    width: auto;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    animation: fadeInTower 1.8s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
 }
 @keyframes fadeInTower {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ═══════════════════════════════════════
-   BOTTOM BANNER — solid, brand info
-   ═══════════════════════════════════════ */
+/* =======================================================
+   BOTTOM BANNER - solid, brand info
+   ======================================================= */
 .bottom-banner {
-  position: relative;
-  z-index: 3;
-  background: var(--panel);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.8rem 2rem 1.8rem;
-  flex-shrink: 0;
-  gap: 0.5rem;
-  overflow: visible;
-  /* subtle top edge */
+    position: relative;
+    z-index: 3;
+    background: var(--panel);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.8rem 2rem 1.8rem;
+    flex-shrink: 0;
+    gap: 0.5rem;
+    overflow: visible;
+    /* subtle top edge */
   box-shadow: 0 -4px 30px rgba(0,0,0,0.3);
 }
 
 /* Wordmark row: small O icon + OPTRONIX.SYSTEMS */
 .wordmark-row {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  opacity: 0;
-  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    opacity: 0;
+    animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s forwards;
 }
 .wordmark-icon {
-  width: 24px;
-  height: 24px;
+    width: 24px;
+    height: 24px;
 }
 .wordmark-text {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 1.05rem;
-  font-weight: 500;
-  letter-spacing: 6px;
-  text-transform: uppercase;
-  color: var(--text-sub);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--text-sub);
 }
 
 /* "site coming soon..." */
 .coming-soon {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 300;
-  font-style: italic;
-  color: var(--text-sub);
-  letter-spacing: 0.3px;
-  opacity: 0;
-  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.05s forwards;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-sub);
+    letter-spacing: 0.3px;
+    opacity: 0;
+    animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.05s forwards;
 }
 
 /* Email */
 .email-link {
-  font-family: 'Rajdhani', sans-serif;
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--cyan);
-  text-decoration: none;
-  opacity: 0;
-  animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
-  transition: text-shadow 0.3s ease;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    text-decoration: none;
+    opacity: 0;
+    animation: revealUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.15s forwards;
+    transition: text-shadow 0.3s ease;
 }
 .email-link:hover {
-  text-shadow: 0 0 16px var(--cyan-dim);
+    text-shadow: 0 0 16px var(--cyan-dim);
 }
 
 /* Copyright */
 .copyright {
-  font-size: 0.5rem;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: var(--text-sub);
-  opacity: 0.3;
-  margin-top: 0.3rem;
-  opacity: 0;
-  animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
+    font-size: 0.5rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-sub);
+    opacity: 0.3;
+    margin-top: 0.3rem;
+    opacity: 0;
+    animation: revealUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards;
 }
 
 
-/* ═══════════════
+/* ===============
    RESPONSIVE
-   ═══════════════ */
+   =============== */
 @media (max-width: 600px) {
-  .top-banner {
-    padding: 1.8rem 2rem 1.5rem;
-  }
-  .logo-mark {
-    width: 90px;
-    height: 90px;
-  }
-  .bottom-banner {
-    padding: 1.4rem 1.5rem 1rem;
-  }
-  .wordmark-text {
-    font-size: 0.85rem;
-    letter-spacing: 4px;
-  }
-  .wordmark-icon {
-    width: 20px;
-    height: 20px;
-  }
-  .logo-wordmark {
-    font-size: 0.6rem;
-    letter-spacing: 2.5px;
-    margin-top: 0.35rem;
-  }
-  .tower-silhouette {
-    right: -2rem;
-    height: 30%;
-  }
+    .top-banner {
+          padding: 1.8rem 2rem 1.5rem;
+    }
+    .logo-mark {
+          width: 90px;
+          height: 90px;
+    }
+    .bottom-banner {
+          padding: 1.4rem 1.5rem 1rem;
+    }
+    .wordmark-text {
+          font-size: 0.85rem;
+          letter-spacing: 4px;
+    }
+    .wordmark-icon {
+          width: 20px;
+          height: 20px;
+    }
+    .logo-wordmark {
+          font-size: 1.8rem;
+          letter-spacing: 2.5px;
+          margin-top: 0.35rem;
+    }
+    .tower-silhouette {
+          right: -2rem;
+          height: 30%;
+    }
 }
