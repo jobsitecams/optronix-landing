@@ -9,8 +9,8 @@
 :root {
   --panel: #3f4754;
   --panel-deep: #363d4a;
-  --cyan: #5ce0d8;
-  --cyan-dim: rgba(92, 224, 216, 0.12);
+  --cyan: #4dd8e6;
+  --cyan-dim: rgba(77, 216, 230, 0.12);
   --text: #c8cad0;
   --text-sub: #7d8490;
 }
@@ -56,7 +56,7 @@ html, body {
 .logo-mark {
   width: 130px;
   height: 130px;
-  filter: drop-shadow(0 0 40px rgba(92,224,216,0.06));
+  filter: drop-shadow(0 0 40px rgba(77,216,230,0.06));
   opacity: 0;
   animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
 }
@@ -172,7 +172,7 @@ html, body {
 .hero-title .accent {
   font-weight: 700;
   color: var(--cyan);
-  text-shadow: 0 0 40px rgba(92, 224, 216, 0.15);
+  text-shadow: 0 0 40px rgba(77, 216, 230, 0.15);
 }
 
 @keyframes revealUp {
