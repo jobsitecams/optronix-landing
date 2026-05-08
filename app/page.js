@@ -58,6 +58,7 @@ export default function Home() {
           width={130}
           height={130}
         />
+        <span className="logo-wordmark">OPTRONIX.SYSTEMS</span>
       </header>
 
       {/* ── MIDDLE — video shows through here ── */}
