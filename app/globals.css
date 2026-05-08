@@ -68,15 +68,21 @@ html, body {
 }
 
 .logo-wordmark {
-  font-family: 'Roboto', sans-serif;
-  font-size: clamp(1.1rem, 3vw, 1.8rem);
-  font-weight: 300;
-  letter-spacing: clamp(6px, 1.5vw, 14px);
-  text-transform: uppercase;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 3.5px;
+  text-transform: lowercase;
   color: var(--text-sub);
-  margin-top: 0.8rem;
+  margin-top: 0.45rem;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
   opacity: 0;
   animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
+}
+.logo-wordmark:hover {
+  color: var(--cyan);
 }
 
 
@@ -317,6 +323,11 @@ html, body {
   .wordmark-icon {
     width: 20px;
     height: 20px;
+  }
+  .logo-wordmark {
+    font-size: 0.6rem;
+    letter-spacing: 2.5px;
+    margin-top: 0.35rem;
   }
   .tower-silhouette {
     right: -2rem;
