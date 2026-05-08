@@ -306,7 +306,7 @@ html, body {
     height: 20px;
   }
   .tower-silhouette {
-    right: calc(50% - 13rem);
-    height: 38%;
+    right: -2rem;
+    height: 30%;
   }
 }
