@@ -69,12 +69,12 @@ html, body {
 
 .logo-wordmark {
   font-family: 'Roboto', sans-serif;
-  font-size: 0.85rem;
-  font-weight: 400;
-  letter-spacing: 6px;
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  font-weight: 300;
+  letter-spacing: clamp(6px, 1.5vw, 14px);
   text-transform: uppercase;
   color: var(--text-sub);
-  margin-top: 0.6rem;
+  margin-top: 0.8rem;
   opacity: 0;
   animation: revealDown 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s forwards;
 }
